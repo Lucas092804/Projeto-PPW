@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!-- Essa linha abaixo é OBRIGATÓRIA para sites funcionarem em celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - IFG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho em Flexbox -->
+    <header class="header">
+        <img src="img/logo.png" alt="Logo do IFG" width="200">
+        
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <link rel="stylesheet" href="stylecarrinho.css">
+</head>
+<body>
+    
+
+    <!-- Conteúdo Principal do Carrinho -->
+    <main class="carrinho-container">
+        <h1>Meu Carrinho de Compras</h1>
+
+         <div class="carrinho-conteudo">
+            <!-- Lista dos 2 Produtos já setados -->
+            <section class="lista-produtos">
+                
+                <!-- Produto 1 -->
+                <div class="produto-item">
+                    <img src="img/pcben10.jpg" alt="Notebook Gamer Acer Nitro">
+                    <div class="produto-info">
+                        <h2>Notebook Gamer Acer Nitro</h2>
+                        <p>Intel® Core® i5, NVIDIA GTX 1650, 8GB RAM, 512GB SSD, Linux Gutta.</p>
+                    </div>
+                    <div class="produto-qtd">
+                        <label>Quantidade:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <div class="produto-preco">
+                        <p>R$ 4.899,99</p>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="produto-item">
+                    <img src="img/pcxuxa.jpg" alt="PC Gamer Ryzen 7 5700x">
+                    <div class="produto-info">
+                        <h2>PC Gamer Ryzen 7 5700x</h2>
+                        <p>32gb Ddr4 3200mhz, RTX 4060 8GB, SSD 1TB Nvme, Rosa – Full Pink Premium Water Cooler RGB E Cabos Sleeved.</p>
+                    </div>
+                    <div class="produto-qtd">
+                        <label>Quantidade:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <div class="produto-preco">
+                        <p>R$ 8.999,99</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Caixa Lateral: Resumo do Pedido -->
+            <aside class="resumo-pedido">
+                <h2>Resumo do Pedido</h2>
+                <br>
+                <p>Total (2 produtos):</p>
+                <h3 class="preco-total">R$ 13.899,98</h3>
+                <p class="parcelamento">Em até 10x sem juros de R$ 1.389,99</p>
+                <br>
+                <!-- O botão redireciona para a página de sucesso que está na sua pasta -->
+                <a href="carrinhosucesso.html" class="btn-finalizar">Finalizar pedido</a>
+                <br>
+                <a href="pg_produtos.html" class="btn-voltar">Retornar à Lista de Produtos</a>
+            </aside>
+        </div>
+    </main>
+
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 MDG Informatica.</p>
+       
+    </footer>
+</body>
+</html>
