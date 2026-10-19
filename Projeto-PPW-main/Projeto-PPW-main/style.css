@@ -1,0 +1,71 @@
+/* --- Cabeçalho com FLEXBOX --- */
+body {
+    font-family: "Times New Roman", Times, serif;
+}
+.header {
+    display: flex;
+    flex-direction: row; /* Opcional, pois já é o comportamento padrão */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    
+}
+
+/* Menu com FLEXBOX */
+.menu {
+    display: flex;
+    gap: 20px;            /* Espaço simples entre cada link */
+    list-style: none;     /* Tira as bolinhas da lista */
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* --- Lista de Produtos com CSS GRID --- */
+.produtos-grid {
+    display: grid; /* Se aqui estiver "flex", mude para "grid"! */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;                             
+    padding: 20px 0;
+}
+
+/* Estilo do cartão de cada produto (usando flexbox interno para organizar) */
+.card-produto {
+    border: 1px solid #ccc;
+    padding: 15px;
+    display: flex;
+    flex-direction: column; /* Organiza os itens de cima para baixo */
+    align-items: center;    /* Centraliza imagem, texto e botão */
+    text-align: center;
+}
+
+.card-produto img {
+    width: 120px;
+    height: auto;
+}
+
+.preco {
+    font-weight: bold;
+    color: #008000;
+    margin: 10px 0;
+}
+
+/* --- RESPONSIVIDADE PARA CELULARES --- */
+@media (max-width: 768px) {
+    /* Muda a grade de produtos para 1 coluna */
+    .produtos-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    /* Opcional: Ajusta o cabeçalho para o menu ficar embaixo da logo no celular */
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+}

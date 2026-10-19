@@ -1,0 +1,114 @@
+/* --- Página de Contato (contato.html) --- */
+
+.contato-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.contato-container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #0056b3;
+}
+
+.contato-container p {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.form-contato .grupo-form {
+    margin-bottom: 15px;
+}
+
+.form-contato label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-contato input, 
+.form-contato select, 
+.form-contato textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif, sans-serif; /* Mantém a fonte igual à do site */
+}
+
+.form-contato input:focus, 
+.form-contato select:focus, 
+.form-contato textarea:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+.btn-enviar-contato {
+    width: 100%;
+    background-color: #0056b3;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-enviar-contato:hover {
+    background-color: #004494;
+}
+
+/* --- Página de Sucesso do Contato (contatosucesso.html) --- */
+
+.body-sucesso-contato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e3f2fd; /* Fundo azul claro chamativo */
+    margin: 0;
+}
+
+.caixa-chamativa {
+    background-color: #ffffff;
+    border: 4px solid #0056b3; /* Borda azul escura */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.3); /* Sombra destacada */
+    text-align: center;
+    max-width: 500px;
+}
+
+.caixa-chamativa h1 {
+    color: #0056b3;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.caixa-chamativa p {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.link-voltar-contato {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.link-voltar-contato:hover {
+    background-color: #004494;
+}
