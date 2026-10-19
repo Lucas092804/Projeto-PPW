@@ -1,11 +1,14 @@
 /* --- Cabeçalho com FLEXBOX --- */
+body {
+    font-family: "Times New Roman", Times, serif;
+}
 .header {
     display: flex;
     flex-direction: row; /* Opcional, pois já é o comportamento padrão */
     justify-content: space-between;
     align-items: center;
     background-color: #f4f4f4;
-    padding: 2PC Gamer Ryzen 7 5700x, 0px;
+    
 }
 
 /* Menu com FLEXBOX */

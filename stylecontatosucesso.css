@@ -39,7 +39,7 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-family: Arial, sans-serif; /* Mantém a fonte igual à do site */
+    font-family: 'Times New Roman', Times, serif, sans-serif; /* Mantém a fonte igual à do site */
 }
 
 .form-contato input:focus, 

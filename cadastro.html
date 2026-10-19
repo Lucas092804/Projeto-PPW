@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - MDG Informatica</title>
+    
+    <!-- Link para o CSS do cabeçalho geral e o CSS do cadastro -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylecadastro.css">
+</head>
+<body>
+
+    <!-- Seu Cabeçalho Original em Flexbox -->
+    <header class="header">
+        <img src="img/logo.png" alt="Logo do IFG" width="200">
+        
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="pg_produtos.html">Produtos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulário de Cadastro Corrigido (Usando as novas classes) -->
+    <main class="cadastro-container">
+        <h1>Cadastro</h1>
+        
+        <form onsubmit="fazerCadastro(event)" class="form-cadastro">
+            
+            <div class="grupo-form">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+            </div>
+
+            <div class="grupo-form">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+            </div>
+
+            <div class="grupo-form">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+            </div>
+
+            <div class="grupo-form">
+                <label for="confirmaSenha">Confirmar Senha:</label>
+                <input type="password" id="confirmaSenha" name="confirmaSenha" placeholder="Confirme sua senha" required>
+            </div>
+
+            <button type="submit" class="btn-cadastrar">Cadastrar</button>
+        </form>
+    </main>
+
+    <!-- Rodapé (Padrão) -->
+    <footer>
+        <p>&copy; 2026 MDG Informatica.</p>
+    </footer>
+
+    <!-- Script de Validação e Salvamento no localStorage -->
+    <script>
+        function fazerCadastro(event) {
+            // Impede o recarregamento automático da página
+            event.preventDefault();
+
+            // Pega os valores digitados nos campos
+            const nome = document.getElementById("nome").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const senha = document.getElementById("senha").value;
+            const confirmaSenha = document.getElementById("confirmaSenha").value;
+
+            // 1. Validação de preenchimento dos campos
+            if (!nome || !email || !senha || !confirmaSenha) {
+                alert("Por favor, preencha todos os campos do formulário.");
+                return;
+            }
+
+            // 2. Validação do tamanho mínimo da senha
+            if (senha.length < 6) {
+                alert("A senha deve ter no mínimo 6 caracteres.");
+                return;
+            }
+
+            // 3. Validação de igualdade entre as senhas
+            if (senha !== confirmaSenha) {
+                alert("As senhas não coincidem. Por favor, verifique e tente novamente.");
+                return;
+            }
+
+            // Puxa a lista de usuários cadastrados do localStorage (ou cria uma lista vazia)
+            let usuarios = JSON.parse(localStorage.getItem("usuarios_cadastrados")) || [];
+
+            // Verifica se o e-mail já foi cadastrado previamente
+            const usuarioExistente = usuarios.find(user => user.email === email);
+            if (usuarioExistente) {
+                alert("Este e-mail já está cadastrado. Tente realizar o login.");
+                return;
+            }
+
+            // Cria o objeto do novo usuário
+            const novoUsuario = {
+                nome: nome,
+                email: email,
+                senha: senha
+            };
+
+            // Adiciona o novo usuário ao array e salva de volta no localStorage
+            usuarios.push(novoUsuario);
+            localStorage.setItem("usuarios_cadastrados", JSON.stringify(usuarios));
+
+            alert("Cadastro realizado com sucesso! Redirecionando para a página de login...");
+            
+            // Redireciona para a página de login
+            window.location.href = "login.html";
+        }
+    </script>
+    
+</body>
+</html>

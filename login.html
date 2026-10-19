@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MDG Informatica</title>
+    
+    <!-- Link para o CSS do cabeçalho geral e o CSS do cadastro -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylelogin.css">
+</head>
+<body>
+
+    <!-- Seu Cabeçalho Original em Flexbox -->
+    <header class="header">
+        <img src="img/logo.png" alt="Logo do IFG" width="200">
+        
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulário de Login -->
+    <main class="login">
+        
+        <!-- Adicionei o 'onsubmit' para chamar o nosso JavaScript -->
+        <form onsubmit="fazerLogin(event)" class="form-cadastro">
+            
+            <div class="grupo-form">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+            </div>
+
+            <div class="grupo-form">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+
+            <button type="submit" class="btn-login">Login</button>
+        </form>
+    </main>
+
+    <!-- Rodapé (Padrão) -->
+    <footer>
+        <p>&copy; 2026 MDG Informatica.</p>
+    </footer>
+
+    <!-- Script que faz o Login funcionar -->
+    <script>
+        function fazerLogin(event) {
+            // 1. Impede que o formulário apenas recarregue a página (comportamento padrão)
+            event.preventDefault(); 
+
+            // 2. Salva no navegador que o usuário está logado
+            localStorage.setItem("usuarioLogado", "sim");
+
+            // 3. Redireciona o usuário para a página inicial
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
